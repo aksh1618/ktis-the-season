@@ -14,6 +14,9 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 
 - Day 1: Sonar Sweep | [Puzzle](https://adventofcode.com/2021/day/1) | [Solution](./src/Day01.kt)
 - Day 2: Dive! | [Puzzle](https://adventofcode.com/2021/day/2) | [Solution](./src/Day02.kt)
+- Day 3: Binary Diagnostic | [Puzzle](https://adventofcode.com/2021/day/3) | [Solution](./src/Day03.kt)
+- Day 4: Giant Squid | [Puzzle](https://adventofcode.com/2021/day/4) | [Solution](./src/Day04.kt)
+- Day 5: Hydrothermal Venture | [Puzzle](https://adventofcode.com/2021/day/5) | [Solution](./src/Day05.kt)
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
