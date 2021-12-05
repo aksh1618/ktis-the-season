@@ -28,14 +28,33 @@ fun main() {
             .run { this * inv(maskBits = noOfBits) } // times epsilon rate (Masked to overcome 2's complement negation)
     }
 
+    fun findForBitCriteria(input: List<String>, bitCriteria: (Int, Int) -> (Char) -> Boolean): Int {
+        val indices = input.indices.toMutableSet()
+        val noOfBits = input[0].length
+        (0 until noOfBits).takeWhile { bitIndex ->
+            val setBits = indices.map { input[it] }.sumOf { it[bitIndex].digitToInt() }
+            val criteria = bitCriteria(setBits, indices.size)
+            indices.retainAll { criteria(input[it][bitIndex]) }
+            indices.size > 1
+        }
+        return input[indices.first()].toInt(2)
+    }
+
     fun part2(input: List<String>): Int {
-        return input.size
+        val oxygenGeneratorRating = findForBitCriteria(input) { setBits, numbers ->
+            { bit -> bit == if (setBits >= numbers - setBits) '1' else '0' }
+        }
+        val co2ScrubberRating = findForBitCriteria(input) { setBits, numbers ->
+            { bit -> bit == if (setBits < numbers - setBits) '1' else '0' }
+        }
+        return oxygenGeneratorRating * co2ScrubberRating
     }
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day03_test")
     check(part1String(testInput) == 198)
     check(part1Bits(testInput) == 198)
+    check(part2(testInput) == 230)
 
     val input = readInput("Day03")
     println(part1String(input))
