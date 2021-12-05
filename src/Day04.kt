@@ -46,12 +46,34 @@ fun main() {
     }
 
     fun part2(numbersToDraw: List<Int>, boards: List<Board>): Int {
-        return numbersToDraw.size
+        var winningBoardIndex = 0
+        var lastNumberDrawnIndex = 0
+        var low = 0
+        var high = numbersToDraw.size - 1
+        // Binary search for last drawn number with a non-winning board
+        while (low <= high) {
+            val mid = (low + high).ushr(1) // safe from overflows
+            val numbersDrawn = numbersToDraw.subList(0, mid + 1).toSet()
+            val anyWinningBoardIndex = boards.indices.firstOrNull { !boards[it].checkWinning(numbersDrawn) }
+            if (anyWinningBoardIndex != null) {
+                // One or more non-winning boards: Draw more numbers to see if any non-winning boards
+                winningBoardIndex = anyWinningBoardIndex
+                lastNumberDrawnIndex = mid + 1 // Next drawn number will be the first with all drawn boards
+                low = mid + 1
+            } else {
+                // No non-winning board: Draw lesser numbers
+                high = mid - 1
+            }
+        }
+        val numbersDrawn = numbersToDraw.subList(0, lastNumberDrawnIndex + 1).toSet()
+        val lastNumberDrawn = numbersToDraw[lastNumberDrawnIndex]
+        return lastNumberDrawn * boards[winningBoardIndex].sumOf { row -> row.filter { it !in numbersDrawn }.sum() }
     }
 
     // test if implementation meets criteria from the description, like:
     val (testNumbersToDraw, testBoards) = readNumbersAndBoards(readInput("Day04_test"))
     check(part1(testNumbersToDraw, testBoards) == 4512)
+    check(part2(testNumbersToDraw, testBoards) == 1924)
 
     val (numbersToDraw, boards) = readNumbersAndBoards(readInput("Day04"))
     println(part1(numbersToDraw, boards))
