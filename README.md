@@ -17,6 +17,7 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 - Day 3: Binary Diagnostic | [Puzzle](https://adventofcode.com/2021/day/3) | [Solution](./src/Day03.kt)
 - Day 4: Giant Squid | [Puzzle](https://adventofcode.com/2021/day/4) | [Solution](./src/Day04.kt)
 - Day 5: Hydrothermal Venture | [Puzzle](https://adventofcode.com/2021/day/5) | [Solution](./src/Day05.kt)
+- Day 6: Lanternfish | [Puzzle](https://adventofcode.com/2021/day/6) | [Solution](./src/Day06.kt)
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
