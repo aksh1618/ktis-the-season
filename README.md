@@ -18,6 +18,9 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 - Day 4: Giant Squid | [Puzzle](https://adventofcode.com/2021/day/4) | [Solution](./src/Day04.kt)
 - Day 5: Hydrothermal Venture | [Puzzle](https://adventofcode.com/2021/day/5) | [Solution](./src/Day05.kt)
 - Day 6: Lanternfish | [Puzzle](https://adventofcode.com/2021/day/6) | [Solution](./src/Day06.kt)
+- Day 7: The Treachery of Whales | [Puzzle](https://adventofcode.com/2021/day/7) | [Solution](./src/Day07.kt)
+- Day 8: Seven Segment Search | [Puzzle](https://adventofcode.com/2021/day/8) | [Solution](./src/Day08.kt)
+- Day 9: Smoke Basin | [Puzzle](https://adventofcode.com/2021/day/9) | [Solution](./src/Day09.kt)
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
