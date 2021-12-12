@@ -35,3 +35,5 @@ fun Int.pow(exponent: Int) = toDouble().pow(exponent).toInt()
  * @return Decimal representation of the masked complement
  */
 fun Int.inv(maskBits: Int) = inv() and 2.pow(maskBits) - 1
+
+fun <K, V> Map<K, V>.inverse() = this.map { (k, v) -> v to k }.toMap()
