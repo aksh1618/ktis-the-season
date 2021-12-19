@@ -25,6 +25,7 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 - Day 11: Dumbo Octopus | [Puzzle](https://adventofcode.com/2021/day/11) | [Solution](./src/Day11.kt)
 - Day 12: Passage Pathing | [Puzzle](https://adventofcode.com/2021/day/12) | [Solution](./src/Day12.kt)
 - Day 13: Transparent Origami | [Puzzle](https://adventofcode.com/2021/day/13) | [Solution](./src/Day13.kt)
+- Day 14: Extended Polymerization | [Puzzle](https://adventofcode.com/2021/day/14) | [Solution](./src/Day14.kt)
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
